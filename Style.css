@@ -1,0 +1,30 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+main
+{
+    display: flex;
+    justify-content: column;
+    justify-content: center;
+}
+form
+{
+    border: 1px solid grey;
+    padding: 5px;
+    width: 80%;
+    border-radius: 5px;
+    height: 270px;
+    margin-top: 10px;
+}
+.container-fluid:hover
+{
+    background-color: lightgray;
+}
+html {
+    height: 100%;
+  }
