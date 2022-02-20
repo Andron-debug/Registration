@@ -1,4 +1,4 @@
-<?php require("Header.html");?>
+<?php require("Header.php");?>
 <body>
 <?php require("Nav.html");?>
 <main>
@@ -18,24 +18,6 @@
         <?php
                 if(isset($_POST['email'])&&isset($_POST['password']))
                 {
-                    $host = "localhost";
-                    $user = "root";
-                    $db_password = "";
-                    $db_name = "task1";
-                    $sql_con = new mysqli($host, $user, $db_password, $db_name);
-                    if($sql_con -> connect_errno)
-                    {
-                      echo $sql_con ->error;
-                    }
-                    $email = $_POST['email'];
-                    $password = $_POST['password'];
-                    $sql = "INSERT INTO `users`(`Id`, `Email`, `Password`) VALUES (null, '".$email."', '".$password."')";
-                    echo $sql;
-                    $sql_con -> query($sql);
-                    if(!$sql_con -> query($sql))
-                    {
-                        echo $sql_con ->error;
-                    }
                 }
         ?>
     </main>

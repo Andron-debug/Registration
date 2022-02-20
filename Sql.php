@@ -1,18 +1,24 @@
-if (isset($_REQUEST['sql']))
-{
-$host = "localhost";
-$user = "root";
-$db_password = "";
-$db_name = "task1";
-$sql_con = new mysqli($host, $user, $db_password, $db_name);
-if($sql_con -> connect_errno)
+<?php 
+    class DateBase
     {
-        echo $sql_con ->error;
+        private $host;
+        private $user;
+        private $password;
+        private $name;
+        private $sql_con;
+        public function __construct($Ht, $Ur, $Pw, $Nm)
+        {
+             $this -> host = $Ht;
+             $this -> user = $Ur;
+             $this -> password = $Pw;
+             $this -> name = $Nm;
+             $this -> sql_con = new mysqli($this -> host, $this -> user, $this -> password, $this -> name);
+             if($this -> sql_con -> connect_errno) throw new Exeption($this -> sql_con -> error); 
+        }
+        public function Registration($Email, $Password)
+        {
+            $sql = "INSERT INTO `users`(`Email`, `Password`) VALUES ('".$Email."', '".$Password."')";
+            $this -> sql_con -> query($sql);
+        }
     }
-echo $sql;
-$sql_con -> query($_REQUEST['sql']);
-if(!$sql_con -> query($_REQUEST['sql'])))
-    {
-        echo $sql_con ->error;
-    }
-}
+?>
