@@ -2,7 +2,7 @@
 <body>
 <?php require("Nav.html");?>
 <main>
-        <form action="Login.php" method="post">
+        <form action="Login.php" method="post" class="login_form">
             <form>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>

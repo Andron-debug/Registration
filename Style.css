@@ -12,14 +12,23 @@ main
     justify-content: column;
     justify-content: center;
 }
-form
+.registration_form
 {
     border: 1px solid grey;
     padding: 5px;
     width: 80%;
     border-radius: 5px;
-    max-height: 270px;
-    margin-top: 10px;
+    height: 390px;
+    top: 10px;
+}
+.login_form
+{
+    border: 1px solid grey;
+    padding: 5px;
+    width: 80%;
+    border-radius: 5px;
+    height: 230px;
+    top: 10px;
 }
 .container-fluid:hover
 {
