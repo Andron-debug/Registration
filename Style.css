@@ -19,7 +19,7 @@ main
     width: 80%;
     border-radius: 5px;
     height: 390px;
-    top: 10px;
+;
 }
 .login_form
 {
@@ -28,7 +28,17 @@ main
     width: 80%;
     border-radius: 5px;
     height: 230px;
-    top: 10px;
+
+}
+.willreg_form
+{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    padding: 5px;
+    width: 20%;
+    border-radius: 5px;
+    height: 85px;
 }
 nav
 {
