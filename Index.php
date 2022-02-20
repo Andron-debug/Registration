@@ -30,7 +30,7 @@
                     try
                     {
                       $db -> Registration($_POST['email'], $_POST['password']);
-                      echo "<script>alert('User successfully registered')</script>";
+                      echo "<script>alert('You successfully registered')</script>";
                     }
                     catch (Exception $e)
                     {

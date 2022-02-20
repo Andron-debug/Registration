@@ -20,5 +20,19 @@
             $sql = "INSERT INTO `users`(`Email`, `Password`) VALUES ('".$Email."', '".$Password."')";
             $this -> sql_con -> query($sql);
         }
+        public function IsEmailInBase($Email)
+        {
+            $sql = "SELECT * FROM `users` WHERE `Email` = '".$Email."'";
+            $res = mysqli_query($this->sql_con, $sql);
+            $user = mysqli_fetch_assoc($res);
+            return !(empty($user));
+        }
+        public function IsPasswordOk($Email, $Password)
+        {
+            $sql = "SELECT * FROM `users` WHERE `Email` = '".$Email."' AND `Password` = '".$Password."'";
+            $res = mysqli_query($this->sql_con, $sql);
+            $user = mysqli_fetch_assoc($res);
+            return !(empty($user));
+        }
     }
 ?>

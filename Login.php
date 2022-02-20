@@ -18,6 +18,21 @@
         <?php
                 if(isset($_POST['email'])&&isset($_POST['password']))
                 {
+                  if($db -> IsEmailInBase($_POST['email']))
+                  {
+                    if($db -> IsPasswordOk($_POST['email'],$_POST['password']))
+                    {
+                      echo "<script>alert('You successfully login')</script>";
+                    }
+                      else
+                      {
+                        echo "<script>alert('Invalid password')</script>";
+                      }
+                  }
+                  else
+                  {
+                    echo "<script>alert('User does not exist')</script>";
+                  }
                 }
         ?>
     </main>
