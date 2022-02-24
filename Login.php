@@ -1,5 +1,4 @@
 <?php require("Header.php");?>
-<body>
 <?php require("Nav.html");?>
 <main>
         <form action="Login.php" method="post" class="login_form">
@@ -21,6 +20,9 @@
                     if($db -> IsPasswordOk($_POST['email'],$_POST['password']))
                     {
                       echo "<script>alert('You successfully login')</script>";
+                      $_SESSION['email'] = $_POST['email'];
+                      $_SESSION['password'] = $_POST['password'];
+                      header("Location: Index.php");
                     }
                       else
                       {
@@ -29,7 +31,6 @@
                   }
                   else
                   {
-                    //echo "<script>alert('User does not exist')</script>";
                     require("WillReg.php");
                   }
                 }
