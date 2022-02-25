@@ -34,5 +34,10 @@
             $user = mysqli_fetch_assoc($res);
             return !(empty($user));
         }
+        public function AddTask($Email, $Task)
+        {
+            $sql = "INSERT INTO `todo`(`N`, `Email`, `Task`) VALUES (null,'".$Email."', '".$Task."')";
+            $this -> sql_con -> query($sql);
+        }
     }
 ?>
