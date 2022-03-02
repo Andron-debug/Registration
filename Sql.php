@@ -36,8 +36,12 @@
         }
         public function AddTask($Email, $Task)
         {
-            $sql = "INSERT INTO `todo`(`N`, `Email`, `Task`) VALUES (null,'".$Email."', '".$Task."')";
+            $sql = "INSERT INTO `todo` (`N`, `Email`, `Task`,`Time_creation`) VALUES (null, '".$Email."', '".$Task."', NOW())";
             $this -> sql_con -> query($sql);
         }
+        public function GetToDoList($Email)
+        {
+            $sql = 'select * from `todo` where `Email` = "'.$Email.'" ORDER BY `Time_creation` ASC';
+            return mysqli_query($this->sql_con, $sql);        }
     }
 ?>
