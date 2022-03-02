@@ -49,5 +49,11 @@
             $sql = "DELETE FROM `todo` WHERE `N`=".$N;
             $this -> sql_con -> query($sql);
         }
+        public function Edit($N, $Text)
+        {
+            $sql = "UPDATE `todo` SET `Task`= '".$Text."' WHERE `N` =".$N;
+            $this -> sql_con -> query($sql);
+        }
+
     }
 ?>

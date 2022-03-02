@@ -63,6 +63,7 @@ h2
     padding: 5px;
     width: 80%;
     border-radius: 5px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     height: 135px;
@@ -73,7 +74,6 @@ h2
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    /* border: solid 1px black; */
 }
 .td_task
 {
