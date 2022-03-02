@@ -41,7 +41,13 @@
         }
         public function GetToDoList($Email)
         {
-            $sql = 'select * from `todo` where `Email` = "'.$Email.'" ORDER BY `Time_creation` ASC';
-            return mysqli_query($this->sql_con, $sql);        }
+            $sql = 'select * from `todo` where `Email` = "'.$Email.'" ORDER BY `Time_creation` DESC';
+            return mysqli_query($this->sql_con, $sql);        
+        }
+        public function DeleteTask($N)
+        {
+            $sql = "DELETE FROM `todo` WHERE `N`=".$N;
+            $this -> sql_con -> query($sql);
+        }
     }
 ?>
